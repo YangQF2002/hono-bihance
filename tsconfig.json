@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+
+    // https://stackoverflow.com/questions/76042962/why-must-i-import-ts-files-as-js-files-in-this-case/76332913#76332913
+    "allowImportingTsExtensions": true, 
+    "noEmit": true                      
+  },
+}
