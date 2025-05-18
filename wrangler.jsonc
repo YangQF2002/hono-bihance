@@ -6,8 +6,10 @@
   "vars": {
     "UPLOADTHING_TOKEN": "eyJhcGlLZXkiOiJza19saXZlX2JlYTIwMWQ3YTY0NTJmNDE4MzBiMDkzZWIwYTg2NTk0NmIyNDE3MTUxMjQxY2EwZjQ4ZmFlYWJhZmMwZTY2OGIiLCJhcHBJZCI6InloczJ1azhqN24iLCJyZWdpb25zIjpbInNlYTEiXX0=",
     "ENVIRONMENT": "development"
+  },
+  "observability": {
+     "enabled": true,   
   }
-
 
   // "compatibility_flags": [
   //   "nodejs_compat"

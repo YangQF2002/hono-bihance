@@ -43,9 +43,8 @@ app.all("/api/uploadthing", async (c) => {
   if (method !== "GET" && method !== "POST") {
     return c.text("Method not allowed", 405);
   }
-
-  const response = await handlers(c.req.raw)
-  return response;
+  
+  return handlers(c.req.raw)
 });
 
 
