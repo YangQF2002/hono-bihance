@@ -25,7 +25,7 @@ app.all("/api/uploadthing", async (c) => {
       // Reads the env variables 
       token: c.env.UPLOADTHING_TOKEN,
       isDev: c.env.ENVIRONMENT === "development",
-
+      callbackUrl: "https://hono.yangqf18.workers.dev/api/uploadthing",
       // Workers doesn't support cache option
       // So we need to remove it from request init
       fetch: (url, init) => {
@@ -43,7 +43,7 @@ app.all("/api/uploadthing", async (c) => {
   if (method !== "GET" && method !== "POST") {
     return c.text("Method not allowed", 405);
   }
-  
+
   return handlers(c.req.raw)
 });
 
