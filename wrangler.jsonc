@@ -5,7 +5,8 @@
   "compatibility_date": "2025-05-18",
   "vars": {
     "UPLOADTHING_TOKEN": "eyJhcGlLZXkiOiJza19saXZlXzFlMmRlMDExNTZiYTc4ODE2NTllYTNmOTdjM2JmZmUwMGRkYWE2MThiYjQ3ZjhjYmY3YWJlMjRkOTA4NzIyY2YiLCJhcHBJZCI6ImJoZzFvZjdibGgiLCJyZWdpb25zIjpbInNlYTEiXX0=",
-    "ENVIRONMENT": "development"
+    "ENVIRONMENT": "development",
+    "UPLOADTHING_CALLBACK_URL": "https://hono.yangqf18.workers.dev/api/uploadthing"
   },
   "observability": {
      "enabled": true,   
