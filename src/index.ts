@@ -10,8 +10,8 @@ type Bindings = {
 }
 
 const app = new Hono<{Bindings: Bindings}>();
-app.use("*", cors());
-app.use("*", logger());
+// app.use("*", cors());
+// app.use("*", logger());
 
 // Request from Expo Frontend 
 app.all("/api/uploadthing", async (c) => {
@@ -25,7 +25,6 @@ app.all("/api/uploadthing", async (c) => {
       // Reads the env variables 
       token: c.env.UPLOADTHING_TOKEN,
       isDev: c.env.ENVIRONMENT === "development",
-      callbackUrl: "https://hono.yangqf18.workers.dev/api/uploadthing",
       // Workers doesn't support cache option
       // So we need to remove it from request init
       fetch: (url, init) => {
