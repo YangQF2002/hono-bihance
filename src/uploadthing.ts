@@ -15,6 +15,9 @@ export const uploadRouter = {
       maxFileSize: "4MB",
       maxFileCount: 1,
     },
+  }).onUploadError(({ error, fileKey }) => {
+    console.log("upload error", { message: error.message, fileKey });
+    throw error;
   }).onUploadComplete((data) => {
     console.log("upload completed", data);
   }),

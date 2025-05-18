@@ -1,6 +1,8 @@
 import { Hono } from "hono";
 import { createRouteHandler } from "uploadthing/server";
 import { uploadRouter } from "./uploadthing.ts";
+import { cors } from "hono/cors";
+import { logger } from "hono/logger";
 
 type Bindings = {
   UPLOADTHING_TOKEN: string 
@@ -8,6 +10,8 @@ type Bindings = {
 }
 
 const app = new Hono<{Bindings: Bindings}>();
+app.use("*", cors());
+app.use("*", logger());
 
 // Request from Expo Frontend 
 app.all("/api/uploadthing", async (c) => {
