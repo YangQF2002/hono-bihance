@@ -3,6 +3,9 @@ import { createRouteHandler } from "uploadthing/server";
 import { uploadRouter } from "./uploadthing.ts";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import { UTApi } from "uploadthing/server";
+
+const utapi = new UTApi()
 
 type Bindings = {
   UPLOADTHING_TOKEN: string 
@@ -13,7 +16,7 @@ const app = new Hono<{Bindings: Bindings}>();
 app.use("*", cors());
 app.use("*", logger());
 
-// Request from Expo Frontend 
+// [UPLOAD FILES]
 app.all("/api/uploadthing", async (c) => {
   // Create a route handler with our file router
   // To "expose (file router) to the world"
@@ -46,6 +49,12 @@ app.all("/api/uploadthing", async (c) => {
 
   return handlers(c.req.raw)
 });
+
+// [DELETE A FILE]
+app.delete("/api/uploadthing/:file_key", async (c) => {
+  const { file_key } = c.req.param()
+  await utapi.deleteFiles(file_key)
+})
 
 
 export default app;
