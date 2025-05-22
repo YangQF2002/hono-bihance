@@ -54,6 +54,7 @@ app.all("/api/uploadthing", async (c) => {
 app.delete("/api/uploadthing/:file_key", async (c) => {
   const { file_key } = c.req.param()
   await utapi.deleteFiles(file_key)
+  return c.text(`Deleted ${file_key} successfully.`);
 })
 
 
