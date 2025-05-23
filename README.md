@@ -1,21 +1,12 @@
+## Setting Up the File Backend 🤩
+
+### Local
 ```txt
 npm install
-npm run dev
+npm run dev --ip 0.0.0.0
 ```
 
-```txt
-npm run deploy
-```
+### Deploy
+  - Server is already deployed at https://hono.yangqf18.workers.dev/api/uploadthing 
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+  - `git push` to `master` will automatically re-deploy
