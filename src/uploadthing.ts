@@ -5,7 +5,7 @@ import { createUploadthing, type FileRouter } from "uploadthing/server";
 
 const f = createUploadthing();
 export const uploadRouter = {
-  // Define as many FileRoutes as you like, each with a unique routeSlug
+  // Define as many FileRoutes as you like, each with a unique routeSlug (eg: imageUploader)
   imageUploader: f({
     image: {
       /**

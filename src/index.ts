@@ -51,6 +51,7 @@ app.all("/api/uploadthing", async (c) => {
     },
   });
 
+  // UploadThing server will callback to this endpoint (after file upload/file upload error)
   const method = c.req.method;
   if (method !== "GET" && method !== "POST") {
     return c.text("Method not allowed", 405);
