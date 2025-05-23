@@ -1,3 +1,5 @@
+import "dotenv/config"
+
 import { Hono } from "hono";
 import { createRouteHandler } from "uploadthing/server";
 import { uploadRouter } from "./uploadthing.ts";
@@ -13,8 +15,15 @@ type Bindings = {
 }
 
 const app = new Hono<{Bindings: Bindings}>();
-app.use("*", cors());
+app.use("/api/*", cors());
 app.use("*", logger());
+
+// [DELETE A FILE]
+app.delete("/api/uploadthingg/:file_key", async (c) => {
+  const { file_key } = c.req.param()
+  await utapi.deleteFiles(file_key)
+  return c.text(`Deleted ${file_key} successfully.`);
+})
 
 // [UPLOAD FILES]
 app.all("/api/uploadthing", async (c) => {
@@ -49,13 +58,5 @@ app.all("/api/uploadthing", async (c) => {
 
   return handlers(c.req.raw)
 });
-
-// [DELETE A FILE]
-app.delete("/api/uploadthing/:file_key", async (c) => {
-  const { file_key } = c.req.param()
-  await utapi.deleteFiles(file_key)
-  return c.text(`Deleted ${file_key} successfully.`);
-})
-
 
 export default app;

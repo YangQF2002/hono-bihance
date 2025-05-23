@@ -5,11 +5,10 @@
   "compatibility_date": "2025-05-18",
   "observability": {
      "enabled": true,   
-  }
-
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },
