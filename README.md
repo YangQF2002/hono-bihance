@@ -1,7 +1,7 @@
 # Bihance File Server
 ## Hono Server, Deployed on CloudFlare
 
-### Set Up
+### Set Up 🤩
 1. Clone this repo 
 2. Go into the project directory 
    ```
@@ -39,7 +39,7 @@
    # http://127.0.0.1:8000 OR 
    # http://localhost:8000 OR 
    # http://<public-ip>:8000
-   
+
    npm run dev --ip 0.0.0.0
    ```
 7. Alternatively, use the deployed server 
